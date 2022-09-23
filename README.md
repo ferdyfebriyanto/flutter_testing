@@ -48,8 +48,11 @@
 
     Bedah Test Package:
     * Dalam unit testing yang dibuat, digunakan fungsi-fungsi utama dari plugin Test Package meliputi setUp(), test(), dan expect()
+
     * setUp() memanggil fungsi yang akan dieksekusi dimana akan dipanggil pada saat pengujian
+
     * test() melakukan pengujian pada fungsi yang telah dideklarasikan dan hasilnya akan ditampilkan
+
     * expect() mendeklarasikan keluaran yang diharapkan dari hasil pengujian. Dari contoh sebelumnya, diharapkan dengan parameter a = 1 dan b =2 akan memberikan hasil 3.
 
 4. Eksekusi Unit Testing
@@ -61,6 +64,26 @@
     ![Eksekusi Unit Testing](./images/02.png)
 
 5. Pembahasan Hasil Unit Testing
+
+    Terdapat empat kunci informasi:
+    * 00:00 +0 -1: …. (E) berarti eksekusi program dalam waktu 0 detik dengan hasil 0 test lolos (+0) dan 1 test gagal (-1)
+
+    * Pengujian gagal ada pada fungsi calculator.sumTwoNumbers() sum both numbers
+
+    * Pengujian gagal karena pada statement expect() mengharapkan hasil nilai berupa 3 tapi yang dihasilkan 0
+
+    * Pengujian gagal pada calculator_test.dart baris 12 dimana statement expect() didefinisikan
+
+6. Perbaikan Kode
+
+    * Berdasarkan hasil gagal dalam pengujian harus dilakukan identifikasi apa penyebabnya dan memulai untuk melakukan pembenahan bug yang ditemukan.
+
+    * Sehingga lakukan pembenahan pada kode fungsi calculator.dart
+
+    ![Perbaikan Kode](./images/03.png)
+
+7. Unit Testing Perbaikan Kode
+
 
 
     
