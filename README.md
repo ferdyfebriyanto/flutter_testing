@@ -1,16 +1,70 @@
-# flutter_testing
+# #35 | Unit Testing Bagian 1 (TSA 2022)
+## Tujuan Pembelajaran
 
-A new Flutter project.
+* Mampu menerapkan Unit Testing menggunakan Test Package
+* Mampu menerapkan Unit Test Mocking menggunakan Mockito
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Unit Testing Menggunakan Test Package
 
-A few resources to get you started if this is your first Flutter project:
+1. Install Dependensi Dart Test Package: https://pub.dev/packages/test
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. Buat program dart sederhana sebagai bahan unit testing
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+    ![Folder Bahan Unit Testing](./images/01.png)
+
+    di dalam file calculator.dart di folder math
+
+    ```dart
+    class Calculator {
+      int add(int a, int b) {
+        return 0;
+      }
+    }
+    ```
+    
+3. Membuat Unit Testing
+
+   ![Folder Unit Testing](./images/01.png)
+
+    ```dart
+    import 'package:test/test.dart';
+    import '../math/calculator.dart';
+
+        void main() {
+        late Calculator _calculator;
+        setUp(() {
+            _calculator = Calculator();
+        });
+
+        test(
+            'calculator.sumTwoNumbers() sum both numbers',
+            () => expect(_calculator.sumTwoNumbers(1, 2), 3),
+        );
+        }
+    ```
+
+    Bedah Test Package:
+    * Dalam unit testing yang dibuat, digunakan fungsi-fungsi utama dari plugin Test Package meliputi setUp(), test(), dan expect()
+    * setUp() memanggil fungsi yang akan dieksekusi dimana akan dipanggil pada saat pengujian
+    * test() melakukan pengujian pada fungsi yang telah dideklarasikan dan hasilnya akan ditampilkan
+    * expect() mendeklarasikan keluaran yang diharapkan dari hasil pengujian. Dari contoh sebelumnya, diharapkan dengan parameter a = 1 dan b =2 akan memberikan hasil 3.
+
+4. Eksekusi Unit Testing
+
+    Hasil dari eksekusi unit testing mengatakan bahwa pengujian failed, karena hasilnya tidak sesuai harapan.
+
+    Running Test dan Running Dart
+
+    ![Eksekusi Unit Testing](./images/02.png)
+
+5. Pembahasan Hasil Unit Testing
+
+
+    
+
+
+
+
+
+
