@@ -9,7 +9,7 @@
 
 1. Install Dependensi Dart Test Package: https://pub.dev/packages/test
 
-2. Buat program dart sederhana sebagai bahan unit testing
+2. Buat program dart sederhana sebagai bahan unit testing. Contoh program sederhana: lib/math/calculator.dart
 
     ![Folder Bahan Unit Testing](./images/01.png)
 
