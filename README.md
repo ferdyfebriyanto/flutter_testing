@@ -13,7 +13,7 @@
 
     ![Folder Bahan Unit Testing](./images/01.png)
 
-    di dalam file calculator.dart di folder math
+    math/calculator.dart
 
     ```dart
     class Calculator {
