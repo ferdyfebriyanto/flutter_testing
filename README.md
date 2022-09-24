@@ -150,6 +150,79 @@ Unit testing digunakan untuk mengetes apakah sebuah function/method/class itu me
 
     * Hasilnya terdapat 2 pengujian lolos dan 0 pengujian gagal. Hal ini dikarenakan statement expect() pada line 22 dan 23 sudah sesuai dengan hasil yang diharapkan.
 
+
+## Unit Testing Mocking Menggunakan Mockito
+
+1. Install Dependensi framework Mockito https://pub.dev/packages/mockito dan build_runner https://pub.dev/packages/build_runner
+
+    * Mockito : Sebuah framework tiruan menggunakan API untuk data palsu dan data tiruan.
+    * Build_runner: Sebuah package yang digunakan untuk meng-generate code Dart secara otomatis dan modular.
+
+2. Skenario Unit Test Mocking
+    
+    * Bisa diakses di https://docs.flutter.dev/cookbook/testing/unit/mocking
+
+    * Melakukan unit testing pada sebuah fungsi dimana digunakan unttuk mengambil data dari web service API
+
+    * Melakukan dua jenis pengujian, pengujian pertama terdapat respon http sukses dan pengujian kedua terdapat respon http gagal
+
+3. Tambahkan http package sebagai contoh pada pengujian Mocking ini https://pub.dev/packages/http
+
+4. Membuat Pengujian Fungsi
+
+    * Contoh pengujian fungsi disini yaitu menguji unit fetchAlbum() yang ditaruh pada main.dart
+    * Untuk menguji fungsi fetchAlbum() ini dilakukan:
+    1. Terapkan http.Client pada fungsi sebagai instance untuk mengambil data dari web service API
+    2. Gunakan variabel client yang tersedia dari pewarisan http.Client  untuk mengambil data dari internet
+        https://jsonplaceholder.typicode.com/albums/1
+    
+5. main.dart
+    
+    ![main.dart](./images/09.png)
+    ![main.dart](./images/10.png)
+
+    * Penerapan http.Client dan penggunaan client
+    * class data Album untuk menyimpan data yang diambil dari internet dan melakukan penyimpanan berupa tipe Map.
+
+6. Membuat file pengujian dengan sebuah http.Client tiruan
+
+    lib/test/fetch_album_test.dart
+
+    ![fetch_album_test.dart](./images/11.png)
+
+7. Jalankan perintah 
+
+    ```bash
+    flutter pub run build_runner build
+    ```
+    * Perintah ini akan menghasilkan file fetch_album_test.mocks.dart yang berisi kode untuk membuat http.Client tiruan
+
+    ![fetch_album_test.mocks.dart](./images/12.png)
+
+8. Menuliskan Pengujian untuk Setiap Kondisi
+
+    Pada dasarnya fungsi fetchAlbum() ada dua kemungkinan:
+    1. Mengembalikan data berupa Album jika dalam mengambil data dengan panggilan http sukses
+    2. Melempar sebuah Exception jika dalam mengambil data dengan panggilan http gagal
+    3. Pengujian fungsi dengan dua skenario tersebut cukup memanggil MockClient untuk menguji hasilnya dimana bernilai ‘Ok’ jika pengujian sukses
+    4. Setelah terbuat file pengujian berupa http.Client tiruan dari MockClient tersebut, modifikasi kode pada test/fetch_album_test.dart untuk menambahkan grup pengujian.
+
+    fetch_Album_test.dart
+    ![fetch_album_test.dart](./images/13.png)
+
+9. Hasil Pengujian Unit Test Mocking
+
+    Running Test
+
+    ![Hasil Pengujian Unit Test Mocking](./images/14.1.png)
+
+    Running Dart
+
+    ![Hasil Pengujian Unit Test Mocking](./images/14.2.png)
+
+    * Hasilnya terdapat 2 pengujian lolos dan 0 pengujian gagal. Hal ini dikarenakan statement expect() pada line 22 dan 23 sudah sesuai dengan hasil yang diharapkan.
+
+
     
 
     
