@@ -1,4 +1,7 @@
-# #35 | Unit Testing Bagian 1 (TSA 2022)
+# #36 | Unit Testing Bagian 1 (TSA 2022)
+
+Unit testing digunakan untuk mengetes apakah sebuah function/method/class itu memenuhi kriteria yang sudah ditetapkan atau tidak.
+
 ## Tujuan Pembelajaran
 
 * Mampu menerapkan Unit Testing menggunakan Test Package
