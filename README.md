@@ -59,9 +59,13 @@
 
     Hasil dari eksekusi unit testing mengatakan bahwa pengujian failed, karena hasilnya tidak sesuai harapan.
 
-    Running Test dan Running Dart
+    Running Test
 
-    ![Eksekusi Unit Testing](./images/02.png)
+    ![Eksekusi Unit Testing](./images/02.1.png)
+
+    Running Dart
+
+    ![Eksekusi Unit Testing](./images/02.2.png)
 
 5. Pembahasan Hasil Unit Testing
 
@@ -83,8 +87,67 @@
     ![Perbaikan Kode](./images/03.png)
 
 7. Unit Testing Perbaikan Kode
+    * Lakukan unit testing kembali pada file test yang sama yaitu test/calculator_test.dart
 
+    * Hasil running test
 
+    ![Eksekusi Unit Testing Perbaikan](./images/04.1.png)
+
+    * Hasil running dart
+
+    ![Eksekusi Unit Testing Perbaikan](./images/04.2.png)
+
+8. Pembahasan Hasil Unit Testing Perbaikan Kode
+
+    * Pengujian lolos karena fungsi berhasil menghasilkan nilai kembalian sesuai expect() yang bernilai 3.
+
+    * Dengan kode return a + b pada perbaikan kode secara sederhana memberikan nilai kembalian 3 ketika variabel a berisikan nilai 1 dan variabel b berisikan nilai 2.
+
+    * Pengujian juga bisa dilakukan dengan membuat sekumpulan pengujian yang dieksekusi secara bersamaan 
+
+9. Membuat Group Unit Testing
+
+    *  Buat unit test untuk menguji program math/calculator.dart dengan mengimpelementasikan sekumpulan unit testing pada file calculator_test.dart
+
+    ![Group Unit Testing](./images/05.png)
+
+10. Group Unit Testing
+
+    * Perbedaan hanya pada penggunaan metode group() dimana pada metode group() terdapat lebih dari satu statement test()
+
+    * Pada contoh sebelumnya, dipanggil metode group() dengan dua parameter meliputi nama group (“calculator test”) dan sebuah fungsi anonymous yang menjalankan dua statement test() (“()”)
+
+    * Fungsi anonymous tersebut memanggil dua statement test meliputi “sumTwoNumbers() sum both numbers” dan “sumTwoNumbers() sum negative numbe”
+
+11. Eksekusi Group Unit Testing
+
+    Running Test
+
+    ![Eksekusi Group Unit Testing](./images/06.1.png)
+
+    Running Dart
+
+    ![Eksekusi Group Unit Testing](./images/06.2.png)
+
+    * Hasilnya terdapat 1 pengujian lolos dan 1 pengujian gagal. Hal ini dikarenakan statement expect() salah pada line 22 dimana 1 + (-1) diharapkan hasilnya 1
+
+12. Perbaikan Group Unit Testing 
+
+    ![Perbaikan kode](./images/07.png)
+
+13. Eksekusi Group Unit Testing Perbaikan
+
+    Running Test
+
+    ![Eksekusi Group Unit Testing Perbaikan](./images/08.1.png)
+
+    Running Dart
+
+    ![Eksekusi Group Unit Testing Perbaikan](./images/08.2.png)
+
+    * Hasilnya terdapat 2 pengujian lolos dan 0 pengujian gagal. Hal ini dikarenakan statement expect() pada line 22 dan 23 sudah sesuai dengan hasil yang diharapkan.
+
+    
 
     
 
